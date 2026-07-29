@@ -19,6 +19,8 @@
   --row-y: 76px;
   --story-gap: 72px;
   --radius: 16px;
+  --control-height-compact: 38px;
+  --control-height-touch: 44px;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   font-family:
     -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue",
@@ -150,7 +152,7 @@ p { text-wrap: pretty; }
   display: inline-flex;
   align-items: center;
   gap: 2px;
-  min-height: 38px;
+  height: var(--control-height-compact);
   padding: 4px;
   border-radius: var(--radius);
   background: var(--mist);
@@ -160,7 +162,8 @@ p { text-wrap: pretty; }
   display: inline-flex;
   align-items: center;
   min-width: 34px;
-  min-height: 30px;
+  min-height: calc(var(--control-height-compact) - 8px);
+  height: calc(var(--control-height-compact) - 8px);
   justify-content: center;
   padding-inline: 8px;
   border-radius: var(--radius);
@@ -209,8 +212,8 @@ p { text-wrap: pretty; }
   background: var(--accent);
 }
 
-.pill-button {
-  min-height: 38px;
+.site-nav .pill-button {
+  min-height: var(--control-height-compact);
   padding: 0 16px;
   font-size: 13px;
 }
@@ -1111,8 +1114,17 @@ p { text-wrap: pretty; }
   .site-nav { gap: 10px; }
   .site-nav > a:not(.pill-button) { display: none; }
 
+  .language-switch {
+    height: var(--control-height-touch);
+  }
+
+  .site-nav .language-option {
+    min-height: calc(var(--control-height-touch) - 8px);
+    height: calc(var(--control-height-touch) - 8px);
+  }
+
   .site-nav .pill-button {
-    min-height: 44px;
+    min-height: var(--control-height-touch);
     padding-inline: 14px;
     font-size: 12px;
   }
@@ -1237,12 +1249,24 @@ p { text-wrap: pretty; }
 }
 
 @media (pointer: coarse) {
+  .language-switch {
+    height: var(--control-height-touch);
+    padding-block: 0;
+  }
+
+  .site-nav .language-option {
+    min-height: var(--control-height-touch);
+    height: var(--control-height-touch);
+  }
+
+  .site-nav .pill-button {
+    min-height: var(--control-height-touch);
+  }
+
   .brand,
-  .site-nav .language-option,
-  .pill-button,
   .primary-button,
   .secondary-button {
-    min-height: 44px;
+    min-height: var(--control-height-touch);
   }
 }
 
