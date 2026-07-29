@@ -150,10 +150,10 @@ p { text-wrap: pretty; }
   display: inline-flex;
   align-items: center;
   gap: 2px;
-  padding: 3px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--mist) 72%, transparent);
+  min-height: 38px;
+  padding: 4px;
+  border-radius: var(--radius);
+  background: var(--mist);
 }
 
 .site-nav .language-option {
@@ -163,23 +163,25 @@ p { text-wrap: pretty; }
   min-height: 30px;
   justify-content: center;
   padding-inline: 8px;
-  border-radius: 999px;
+  border-radius: var(--radius);
   color: var(--muted);
   font-size: 11px;
-  font-weight: 750;
-  letter-spacing: 0.04em;
+  font-weight: 680;
   line-height: 1;
   text-decoration: none;
+  transition:
+    background-color 180ms var(--ease-out),
+    color 180ms var(--ease-out);
 }
 
 .site-nav .language-option:hover {
   color: var(--ink);
+  background: var(--mist-strong);
 }
 
 .site-nav .language-option.is-current {
   color: var(--ink);
   background: var(--surface);
-  box-shadow: 0 1px 3px rgb(36 63 102 / 12%);
 }
 
 .pill-button,
