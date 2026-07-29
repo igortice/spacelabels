@@ -1,8 +1,10 @@
+import { getReleasePresentation } from "./localization.js";
 import { loadPublicRelease } from "./release.js";
 
 const LATEST_RELEASE_API =
   "https://api.github.com/repos/igortice/spacelabels/releases/latest";
-const RELEASE_FALLBACK = "assets/release-fallback.json";
+const RELEASE_FALLBACK = new URL("./release-fallback.json", import.meta.url).href;
+const language = document.documentElement.lang;
 
 const page = document.body;
 const loadingMessage = document.querySelector("[data-release-loading]");
@@ -18,19 +20,8 @@ function setReleaseState(state) {
   unavailableMessage.hidden = state !== "unavailable";
 }
 
-function formatSize(bytes) {
-  const megabytes = bytes / 1_000_000;
-  return `${new Intl.NumberFormat("pt-BR", {
-    maximumFractionDigits: 1,
-    minimumFractionDigits: 1,
-  }).format(megabytes)} MB`;
-}
-
 function releaseNotes(notes) {
-  const values = notes.length > 0
-    ? notes
-    : ["Consulte a Release pública para ver as mudanças desta versão."];
-  return values.map((note) => {
+  return notes.map((note) => {
     const item = document.createElement("li");
     item.textContent = note;
     return item;
@@ -44,22 +35,22 @@ function enableLink(link, href) {
 }
 
 function renderRelease(release) {
-  const size = formatSize(release.dmgSize);
+  const presentation = getReleasePresentation(release, language);
 
   document.querySelectorAll("[data-release-version]").forEach((element) => {
     element.textContent = release.version;
   });
   document.querySelectorAll("[data-release-size]").forEach((element) => {
-    element.textContent = size;
+    element.textContent = presentation.size;
   });
 
   downloads.forEach((link) => {
     enableLink(link, release.dmgUrl);
     if (link.dataset.downloadLabel === "compact") {
-      link.textContent = `Baixar v${release.version} ↓`;
+      link.textContent = presentation.compactDownloadLabel;
     }
     if (link.dataset.downloadLabel === "full") {
-      link.textContent = `Baixar SpaceLabels ${release.version} ↓`;
+      link.textContent = presentation.fullDownloadLabel;
     }
   });
 
@@ -68,12 +59,13 @@ function renderRelease(release) {
   enableLink(checksumLink, release.checksumUrl);
 
   const notes = document.querySelector("[data-release-notes]");
-  notes.replaceChildren(...releaseNotes(release.notes));
+  notes.lang = presentation.notesLanguage;
+  notes.replaceChildren(...releaseNotes(presentation.notes));
 
   const artifact = document.querySelector("[data-install-artifact]");
   artifact.setAttribute(
     "aria-label",
-    `SpaceLabels ${release.version} para macOS 15 ou superior`,
+    presentation.artifactLabel,
   );
 
   setReleaseState("ready");

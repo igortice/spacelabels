@@ -146,6 +146,42 @@ p { text-wrap: pretty; }
 
 .site-nav a:not(.pill-button):hover { color: var(--ink); }
 
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--mist) 72%, transparent);
+}
+
+.site-nav .language-option {
+  display: inline-flex;
+  align-items: center;
+  min-width: 34px;
+  min-height: 30px;
+  justify-content: center;
+  padding-inline: 8px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.site-nav .language-option:hover {
+  color: var(--ink);
+}
+
+.site-nav .language-option.is-current {
+  color: var(--ink);
+  background: var(--surface);
+  box-shadow: 0 1px 3px rgb(36 63 102 / 12%);
+}
+
 .pill-button,
 .primary-button,
 .secondary-button {
@@ -1071,7 +1107,7 @@ p { text-wrap: pretty; }
   .brand { min-height: 44px; }
   .brand span { display: none; }
   .site-nav { gap: 10px; }
-  .site-nav a:not(.pill-button) { display: none; }
+  .site-nav > a:not(.pill-button) { display: none; }
 
   .site-nav .pill-button {
     min-height: 44px;
@@ -1200,6 +1236,7 @@ p { text-wrap: pretty; }
 
 @media (pointer: coarse) {
   .brand,
+  .site-nav .language-option,
   .pill-button,
   .primary-button,
   .secondary-button {
