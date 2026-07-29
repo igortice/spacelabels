@@ -16,7 +16,9 @@ permanecem em um repositório privado e não são publicados aqui.
 ## Estado atual
 
 O site apresenta o produto com capturas reais, explica seus principais fluxos
-e oferece a Release pública mais recente para download e instalação.
+e oferece a Release pública mais recente para download e instalação. A rota
+`/` usa inglês por padrão e `/pt-BR/` preserva a página completa em português,
+com navegação explícita entre os idiomas.
 
 A página consulta a API pública do GitHub e aceita a Release publicada pelo
 workflow de distribuição validado no repositório privado. Antes de habilitar
@@ -31,8 +33,10 @@ for válida, o download permanece desabilitado.
 O conteúdo estático do GitHub Pages vive na raiz da branch `main`:
 
 - `index.html`
+- `pt-BR/index.html`
 - `assets/styles.css`
 - `assets/site.js`
+- `assets/localization.js`
 - `assets/release.js`
 - `assets/release-fallback.json`
 

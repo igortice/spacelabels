@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta
@@ -8,94 +8,103 @@
     >
     <meta
       name="description"
-      content="SpaceLabels dá nomes às Mesas do macOS, mostra a Mesa ativa e mantém o Histórico dos aplicativos de cada contexto."
+      content="SpaceLabels names your macOS Spaces, shows the active Space, and keeps the app history for each context."
     >
     <meta name="theme-color" content="#f6f8fc">
-    <meta property="og:title" content="SpaceLabels para macOS">
+    <meta property="og:title" content="SpaceLabels for macOS">
     <meta
       property="og:description"
-      content="Dê nome às Mesas do seu Mac e reconheça cada contexto em um olhar."
+      content="Name every Space on your Mac and recognize each context at a glance."
     >
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="pt_BR">
     <meta property="og:url" content="https://igortice.github.io/spacelabels/">
     <meta
       property="og:image"
       content="https://igortice.github.io/spacelabels/assets/spacelabels.webp"
     >
-    <title>SpaceLabels — Dê nome às Mesas do seu Mac</title>
+    <title>SpaceLabels — Name every Space on your Mac</title>
+    <link rel="canonical" href="https://igortice.github.io/spacelabels/">
+    <link rel="alternate" hreflang="en" href="https://igortice.github.io/spacelabels/">
+    <link rel="alternate" hreflang="pt-BR" href="https://igortice.github.io/spacelabels/pt-BR/">
+    <link rel="alternate" hreflang="x-default" href="https://igortice.github.io/spacelabels/">
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="icon" href="assets/favicon.png">
   </head>
   <body data-release-state="loading">
     <header class="site-header">
-      <a class="brand" href="#inicio" aria-label="SpaceLabels, início">
+      <a class="brand" href="#inicio" aria-label="SpaceLabels, home">
         <img src="assets/spacelabels.webp" alt="">
         <span>SpaceLabels</span>
       </a>
-      <nav class="site-nav" aria-label="Navegação principal">
-        <a href="#recursos">Como funciona</a>
-        <a href="#instalar">Como instalar</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#recursos">How it works</a>
+        <a href="#instalar">How to install</a>
+        <span class="language-switch" role="group" aria-label="Language">
+          <span class="language-option is-current" aria-current="page">EN</span>
+          <a class="language-option" href="pt-BR/" hreflang="pt-BR" lang="pt-BR">PT</a>
+        </span>
         <a
           class="pill-button download-link"
           aria-disabled="true"
           data-download-link
           data-download-label="compact"
-        >Conferindo Release…</a>
+        >Checking Release…</a>
       </nav>
     </header>
 
     <main>
       <section class="hero" id="inicio">
         <div class="hero-copy">
-          <p class="product-label">SpaceLabels para macOS</p>
-          <h1>Dê nome às Mesas do seu Mac.</h1>
+          <p class="product-label">SpaceLabels for macOS</p>
+          <h1>Name every Space on your Mac.</h1>
           <p class="lede">
-            Ao trocar de Mesa, veja imediatamente o nome e os aplicativos
-            daquele contexto — sem abrir o Mission Control.
+            When you switch Spaces, instantly see its name and the apps in
+            that context — without opening Mission Control.
           </p>
           <div class="button-row">
             <a
               class="primary-button download-link"
               aria-disabled="true"
               data-download-link
-            >Baixar para macOS ↓</a>
-            <a class="secondary-button" href="#recursos">Ver como funciona</a>
+            >Download for macOS ↓</a>
+            <a class="secondary-button" href="#recursos">See how it works</a>
           </div>
           <p class="microcopy">
-            Versão <span data-release-version>—</span> · macOS 15 ou superior ·
-            <span data-release-size>—</span> · Gratuito
+            Version <span data-release-version>—</span> · macOS 15 or later ·
+            <span data-release-size>—</span> · Free
           </p>
           <p class="release-state-notice" data-release-loading role="status">
-            Conferindo a Release pública antes de liberar o download…
+            Checking the public Release before enabling the download…
           </p>
           <p class="release-state-notice" data-release-unavailable role="status" hidden>
-            O download está indisponível porque a Release pública não pôde ser
-            validada. Nenhum arquivo alternativo será oferecido.
+            The download is unavailable because the public Release could not be
+            validated. No alternative file will be offered.
           </p>
           <noscript>
             <p class="release-state-notice">
-              Ative o JavaScript para validar a Release pública antes do download.
+              Enable JavaScript to validate the public Release before downloading.
             </p>
           </noscript>
         </div>
 
-        <div class="brand-showcase" aria-label="Logo colorida do SpaceLabels">
+        <div class="brand-showcase" aria-label="SpaceLabels full-color icon">
           <img
             src="assets/spacelabels.webp"
-            alt="Logo do SpaceLabels com três Mesas do macOS e um lápis"
+            alt="SpaceLabels icon with three macOS Spaces and a pencil"
           >
           <strong>SpaceLabels</strong>
-          <span>Um sinal nativo para suas Mesas.</span>
+          <span>A native signal for your Spaces.</span>
         </div>
       </section>
 
       <section class="desktop-context">
         <div class="desktop-context-copy">
-          <h2>Fica onde você já olha.</h2>
+          <h2>It stays where you already look.</h2>
           <p>
-            O SpaceLabels vive na barra de menus. A Mesa atual, os aplicativos
-            visíveis e as ações principais ficam a um clique, dentro do próprio
-            ambiente do macOS.
+            SpaceLabels lives in the menu bar. The current Space, its visible
+            apps, and the main actions are one click away, right inside macOS.
           </p>
         </div>
         <figure class="desktop-media">
@@ -103,37 +112,37 @@
             <img
               class="desktop-shot"
               src="assets/desktop-context.webp"
-              alt="Área de trabalho real do macOS com o menu do SpaceLabels aberto"
+              alt="A real macOS desktop with the SpaceLabels menu open"
               loading="lazy"
               decoding="async"
             >
           </div>
-          <figcaption>Captura real do SpaceLabels na área de trabalho do macOS.</figcaption>
+          <figcaption>A real SpaceLabels capture on the macOS desktop.</figcaption>
         </figure>
       </section>
 
       <section class="product-story" id="recursos">
         <div class="story-heading">
-          <h2>Entenda o contexto em um olhar.</h2>
+          <h2>Understand the context at a glance.</h2>
           <p>
-            O produto aparece somente quando há algo útil para mostrar. Depois,
-            deixa você continuar trabalhando.
+            The product appears only when there is something useful to show.
+            Then it gets out of the way so you can keep working.
           </p>
         </div>
 
         <div class="feature-row">
           <div class="feature-copy">
-            <span class="feature-label">Ao trocar de Mesa</span>
-            <h3>O nome aparece. Você continua.</h3>
+            <span class="feature-label">When you switch Spaces</span>
+            <h3>The name appears. You keep going.</h3>
             <p>
-              O HUD mostra a Mesa ativa e até quatro aplicativos visíveis. Ele
-              não toma o foco e desaparece no tempo que você escolher.
+              The HUD shows the active Space and up to four visible apps. It
+              never takes focus and fades away after the interval you choose.
             </p>
           </div>
           <div class="feature-media hud-media">
             <img
               src="assets/hud.webp"
-              alt="HUD real do SpaceLabels mostrando Desktop 4 e o ícone do aplicativo"
+              alt="A real SpaceLabels HUD showing Desktop 4 and the app icon"
               loading="lazy"
               decoding="async"
             >
@@ -142,17 +151,17 @@
 
         <div class="feature-row">
           <div class="feature-copy">
-            <span class="feature-label">Na barra de menus</span>
-            <h3>A Mesa atual e suas ações.</h3>
+            <span class="feature-label">In the menu bar</span>
+            <h3>The current Space and its actions.</h3>
             <p>
-              Veja o nome, reconheça os aplicativos daquele contexto, renomeie a
-              Mesa ou abra o Histórico sem procurar outra janela.
+              See the name, recognize the apps in that context, rename the
+              Space, or open History without hunting for another window.
             </p>
           </div>
           <div class="feature-media menu-media">
             <img
               src="assets/menu.webp"
-              alt="Menu real do SpaceLabels mostrando Desktop 1, aplicativos e ações"
+              alt="The real SpaceLabels menu showing Desktop 1, apps, and actions"
               loading="lazy"
               decoding="async"
             >
@@ -161,17 +170,17 @@
 
         <div class="feature-row">
           <div class="feature-copy">
-            <span class="feature-label">No Histórico</span>
-            <h3>Retome os aplicativos que fechou.</h3>
+            <span class="feature-label">In History</span>
+            <h3>Pick up the apps you closed.</h3>
             <p>
-              Cada Mesa mantém seu próprio contexto. Abra Code, iTerm2 ou todos
-              os aplicativos daquele trabalho quando precisar voltar.
+              Each Space keeps its own context. Open Code, iTerm2, or every app
+              from that work whenever you need to return.
             </p>
           </div>
           <div class="feature-media history-media">
             <img
               src="assets/history.webp"
-              alt="Histórico real do SpaceLabels na Mesa atual com Code e iTerm2"
+              alt="The real SpaceLabels History for the current Space with Code and iTerm2"
               loading="lazy"
               decoding="async"
             >
@@ -181,18 +190,17 @@
 
       <section class="rename-section">
         <div class="rename-copy">
-          <span class="feature-label">Um nome para cada contexto</span>
-          <h2>Nomeie cada Mesa do seu jeito.</h2>
+          <span class="feature-label">A name for every context</span>
+          <h2>Name every Space your way.</h2>
           <p>
-            Troque “Desktop 3” por um nome curto que faça sentido para você.
-            O SpaceLabels usa esse nome para que cada troca de Mesa seja
-            reconhecida imediatamente.
+            Replace “Desktop 3” with a short name that means something to you.
+            SpaceLabels uses it so every Space switch is instantly recognizable.
           </p>
         </div>
         <div class="rename-media">
           <img
             src="assets/rename.webp"
-            alt="Janela real do SpaceLabels para escolher o nome de uma Mesa"
+            alt="The real SpaceLabels window for naming a Space"
             loading="lazy"
             decoding="async"
           >
@@ -201,9 +209,9 @@
 
       <section class="preferences-section">
         <div class="preferences-copy">
-          <h2>Ajuste ao seu jeito de trabalhar.</h2>
+          <h2>Tune it to the way you work.</h2>
           <p>
-            Escolha a duração do HUD, os ícones e como o sinal se comporta no
+            Choose the HUD duration, app icons, and how the signal behaves in
             Mission Control.
           </p>
         </div>
@@ -211,7 +219,7 @@
           <figure>
             <img
               src="assets/preferences.webp"
-              alt="Preferências reais do SpaceLabels"
+              alt="The real SpaceLabels preferences"
               loading="lazy"
               decoding="async"
             >
@@ -222,10 +230,10 @@
       <section class="install-section" id="instalar">
         <div class="install-heading">
           <div class="install-heading-copy">
-            <h2>Baixe.<br>Mova.<br>Abra.</h2>
+            <h2>Download.<br>Move.<br>Open.</h2>
             <p>
-              A versão pública inclui o aplicativo, o checksum para verificar o
-              download e instruções diretas de instalação.
+              The public release includes the app, a checksum to verify the
+              download, and straightforward installation instructions.
             </p>
             <div class="button-row">
               <a
@@ -233,12 +241,12 @@
                 aria-disabled="true"
                 data-download-link
                 data-download-label="full"
-              >Conferindo Release…</a>
+              >Checking Release…</a>
             </div>
           </div>
           <div
             class="install-artifact"
-            aria-label="SpaceLabels para macOS 15 ou superior"
+            aria-label="SpaceLabels for macOS 15 or later"
             data-install-artifact
           >
             <img
@@ -258,39 +266,39 @@
         <ol class="install-steps">
           <li>
             <span class="install-step-number">1</span>
-            <h3>Abra o DMG</h3>
-            <p>Baixe a Release pública e abra a imagem de disco.</p>
+            <h3>Open the DMG</h3>
+            <p>Download the public Release and open the disk image.</p>
           </li>
           <li>
             <span class="install-step-number">2</span>
-            <h3>Mova para Aplicativos</h3>
-            <p>Arraste o SpaceLabels para a pasta Aplicativos.</p>
+            <h3>Move it to Applications</h3>
+            <p>Drag SpaceLabels into the Applications folder.</p>
           </li>
           <li>
             <span class="install-step-number">3</span>
-            <h3>Confirme a abertura</h3>
-            <p>No Finder, escolha Abrir no menu contextual e confirme.</p>
+            <h3>Confirm the first launch</h3>
+            <p>In Finder, choose Open from the context menu and confirm.</p>
           </li>
         </ol>
 
         <details class="technical-details">
-          <summary>Checksum e detalhes da versão</summary>
+          <summary>Checksum and release details</summary>
           <div class="technical-content">
             <div>
               <h3>Checksum SHA-256</h3>
               <p class="checksum" data-release-checksum>
-                Aguardando validação da Release pública.
+                Waiting for public Release validation.
               </p>
               <p class="checksum-download">
                 <a aria-disabled="true" data-checksum-link>
-                  Baixar arquivo .sha256
+                  Download the .sha256 file
                 </a>
               </p>
             </div>
             <div>
-              <h3>Nesta versão</h3>
+              <h3>In this release</h3>
               <ul class="release-notes" data-release-notes>
-                <li>Aguardando notas da Release pública.</li>
+                <li>Waiting for the public Release notes.</li>
               </ul>
             </div>
           </div>
@@ -299,9 +307,9 @@
     </main>
 
     <footer class="site-footer">
-      <span>Criado por <a href="https://github.com/igortice">Igor Rocha</a>.</span>
+      <span>Created by <a href="https://github.com/igortice">Igor Rocha</a>.</span>
       <span>
-        SpaceLabels <span data-release-version>—</span> · macOS 15 ou superior
+        SpaceLabels <span data-release-version>—</span> · macOS 15 or later
       </span>
     </footer>
 
