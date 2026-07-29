@@ -79,6 +79,28 @@ test("both routes share the same versioned design-system stylesheet", () => {
   );
 });
 
+test("both routes use the public GitHub Issues as the feedback channel", () => {
+  const issuesUrl = "https://github.com/igortice/spacelabels/issues";
+
+  assert.match(
+    englishHtml,
+    new RegExp(
+      `<a href="${issuesUrl}">Report an issue</a>`,
+    ),
+  );
+  assert.match(
+    portugueseHtml,
+    new RegExp(
+      `<a href="${issuesUrl}">Relatar um problema</a>`,
+    ),
+  );
+
+  for (const html of [englishHtml, portugueseHtml]) {
+    assert.doesNotMatch(html, /href="(?:\.\.\/)?support\/?"/);
+    assert.doesNotMatch(html, />Support<|>Suporte</);
+  }
+});
+
 test("release-facing links remain fail-closed on both routes", async () => {
   for (const html of [englishHtml, portugueseHtml]) {
     assert.match(html, /<body data-release-state="loading">/);
