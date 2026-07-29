@@ -65,6 +65,20 @@ test("both routes expose reciprocal language selectors and metadata", async () =
   }
 });
 
+test("both routes share the same versioned design-system stylesheet", () => {
+  const englishStylesheet = englishHtml.match(
+    /href="assets\/styles\.css\?v=([^"]+)"/,
+  );
+
+  assert.ok(englishStylesheet, "the English route must cache-bust styles.css");
+  assert.match(
+    portugueseHtml,
+    new RegExp(
+      `href="\\.\\./assets/styles\\.css\\?v=${englishStylesheet[1]}"`,
+    ),
+  );
+});
+
 test("release-facing links remain fail-closed on both routes", async () => {
   for (const html of [englishHtml, portugueseHtml]) {
     assert.match(html, /<body data-release-state="loading">/);
