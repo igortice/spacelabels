@@ -107,8 +107,6 @@ function setupScrollReveals() {
   if (reducedMotion || !("IntersectionObserver" in window)) return;
 
   const targets = [...document.querySelectorAll([
-    ".desktop-context-copy",
-    ".desktop-media",
     ".story-heading",
     ".feature-copy",
     ".feature-media",

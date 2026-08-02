@@ -29,7 +29,7 @@
     <link rel="alternate" hreflang="en" href="https://igortice.github.io/spacelabels/">
     <link rel="alternate" hreflang="pt-BR" href="https://igortice.github.io/spacelabels/pt-BR/">
     <link rel="alternate" hreflang="x-default" href="https://igortice.github.io/spacelabels/">
-    <link rel="stylesheet" href="assets/styles.css?v=20260729-2">
+    <link rel="stylesheet" href="assets/styles.css?v=20260802-1">
     <link rel="icon" href="assets/favicon.png">
   </head>
   <body data-release-state="loading">
@@ -99,28 +99,6 @@
         </div>
       </section>
 
-      <section class="desktop-context">
-        <div class="desktop-context-copy">
-          <h2>It stays where you already look.</h2>
-          <p>
-            SpaceLabels lives in the menu bar. The current Space, its visible
-            apps, and the main actions are one click away, right inside macOS.
-          </p>
-        </div>
-        <figure class="desktop-media">
-          <div class="desktop-shot-frame">
-            <img
-              class="desktop-shot"
-              src="assets/desktop-context.webp"
-              alt="A real macOS desktop with the SpaceLabels menu open"
-              loading="lazy"
-              decoding="async"
-            >
-          </div>
-          <figcaption>A real SpaceLabels capture on the macOS desktop.</figcaption>
-        </figure>
-      </section>
-
       <section class="product-story" id="recursos">
         <div class="story-heading">
           <h2>Understand the context at a glance.</h2>
@@ -152,16 +130,36 @@
         <div class="feature-row">
           <div class="feature-copy">
             <span class="feature-label">In the menu bar</span>
-            <h3>The current Space and its actions.</h3>
+            <h3>The current Space and its context.</h3>
             <p>
-              See the name, recognize the apps in that context, rename the
+              Show an optional Space name from Preferences beside the new menu
+              bar icon, recognize the monitor context and its apps, rename the
               Space, or open History without hunting for another window.
             </p>
           </div>
           <div class="feature-media menu-media">
             <img
-              src="assets/menu.webp"
-              alt="The real SpaceLabels menu showing Desktop 1, apps, and actions"
+              src="assets/menu.webp?v=20260801-1"
+              alt="The real SpaceLabels menu showing Desktop 3, Built-in Retina Display, a visible app, and Manage Desktops action"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="feature-copy">
+            <span class="feature-label">Manage your Spaces</span>
+            <h3>Edit every Space in one place.</h3>
+            <p>
+              Open the management center to rename Spaces by monitor, restore
+              their default names, and see which Space is current.
+            </p>
+          </div>
+          <div class="feature-media native-window-media">
+            <img
+              src="assets/space-management.webp?v=20260801-1"
+              alt="The real SpaceLabels Manage Desktops window grouped by monitor with editable Space names"
               loading="lazy"
               decoding="async"
             >
@@ -197,7 +195,7 @@
             SpaceLabels uses it so every Space switch is instantly recognizable.
           </p>
         </div>
-        <div class="rename-media">
+        <div class="rename-media native-window-media">
           <img
             src="assets/rename.webp"
             alt="The real SpaceLabels window for naming a Space"
@@ -211,15 +209,17 @@
         <div class="preferences-copy">
           <h2>Tune it to the way you work.</h2>
           <p>
-            Choose the HUD duration, app icons, and how the signal behaves in
-            Mission Control.
+            Choose the HUD duration, app icons, optional Space name in the menu
+            bar, and configurable global shortcuts. You can also see how the
+            signal behaves in Mission Control and get confirmation when History
+            deletion finishes.
           </p>
         </div>
-        <div class="preferences-media">
+        <div class="preferences-media native-window-media">
           <figure>
             <img
-              src="assets/preferences.webp"
-              alt="The real SpaceLabels preferences"
+              src="assets/preferences.webp?v=20260801-1"
+              alt="The real SpaceLabels Preferences with the menu bar name option and configurable global shortcuts"
               loading="lazy"
               decoding="async"
             >
@@ -232,8 +232,9 @@
           <div class="install-heading-copy">
             <h2>Download.<br>Move.<br>Open.</h2>
             <p>
-              The public release includes the app, a checksum to verify the
-              download, and straightforward installation instructions.
+              Starting with SpaceLabels 1.4.0, public releases use a branded
+              DMG. Downloads remain locked to the latest verified public
+              version.
             </p>
             <div class="button-row">
               <a
