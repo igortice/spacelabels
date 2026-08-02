@@ -19,6 +19,12 @@ const COPY = {
 };
 
 const RELEASE_NOTE_TRANSLATIONS = {
+  "1.4.0": new Map([
+    [
+      "release: prepare SpaceLabels 1.4.0",
+      "release: prepare SpaceLabels 1.4.0",
+    ],
+  ]),
   "1.3.0": new Map([
     [
       "Adicionar Histórico de apps da Mesa atual",
@@ -47,6 +53,10 @@ const RELEASE_NOTE_TRANSLATIONS = {
   ]),
 };
 
+const RELEASE_NOTE_SOURCE_LANGUAGES = {
+  "1.4.0": "en",
+};
+
 function supportedLanguage(language) {
   return language === PORTUGUESE ? PORTUGUESE : "en";
 }
@@ -71,7 +81,7 @@ function localizedNotes(release, language) {
   if (language === PORTUGUESE) {
     return {
       notes: release.notes,
-      notesLanguage: PORTUGUESE,
+      notesLanguage: RELEASE_NOTE_SOURCE_LANGUAGES[release.version] ?? PORTUGUESE,
     };
   }
 

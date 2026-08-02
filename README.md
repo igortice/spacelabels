@@ -27,16 +27,20 @@ downloading.
 - **Keeps App History by Space.** Review apps closed in a Space and reopen one
   app or all of them when you return.
 - **Stays in the menu bar.** The current Space, visible apps and main actions
-  are one click away inside macOS.
+  are one click away inside macOS, with an optional Space name in the menu bar
+  and monitor context.
+- **Manages Spaces together.** Manage Desktops groups Spaces by monitor so you
+  can rename them, restore default names and see the current Space.
 - **Adapts to your workflow.** Preferences control HUD duration, app icons,
-  Mission Control behavior and local History deletion.
+  Mission Control behavior, global shortcuts, the optional menu bar name and
+  local History deletion.
 
 ## First use
 
 The real app follows this flow:
 
-1. **Menu bar menu:** the current Space, its visible app icons, History, rename,
-   Preferences and the other app actions.
+1. **Menu bar menu:** the current Space, its monitor context, visible app icons,
+   History, rename, Manage Desktops, Preferences and the other app actions.
 2. **SpaceLabels HUD:** a short signal that appears after you change Spaces,
    names the destination and fades without interrupting your work.
 3. **App History:** a local window with a Space selector, the apps that were
@@ -44,7 +48,8 @@ The real app follows this flow:
 4. **Rename Space:** a native dialog where a default name such as “Desktop 3”
    becomes a useful label for your context.
 5. **Preferences:** controls for the HUD, icons, Mission Control and permanent
-   deletion of local History data.
+   deletion of local History data, plus the optional menu bar name and global
+   shortcuts.
 
 For screenshots and the Portuguese walkthrough, use the [optional visual
 guide](https://igortice.github.io/spacelabels/). Nothing on that site is
@@ -67,37 +72,43 @@ required for the app to work.
    confirming the checksum, before using **Open Anyway** in System Settings.
 5. Look for the SpaceLabels icon in the menu bar.
 
+Starting with SpaceLabels 1.4.0, public releases use a branded DMG. Downloads
+remain locked to the latest verified public version.
+
 No installer account or additional service is required.
 
 ## Release and checksum
 
 The [latest public Release](https://github.com/igortice/spacelabels/releases/latest)
 is the source of truth for the current version, DMG and checksum. The current
-reference release is **v1.3.0**:
+reference release is **v1.4.0**:
 
-- DMG: `SpaceLabels-1.3.0.dmg` (2.7 MB)
+- DMG: `SpaceLabels-1.4.0.dmg` (5.2 MB)
 - SHA-256:
-  `5d68bcf6d08165eba79a8fd8323585b62e0a8ecee1c567aaa5722020e44fc844`
-- [Download the v1.3.0 DMG](https://github.com/igortice/spacelabels/releases/download/v1.3.0/SpaceLabels-1.3.0.dmg)
-- [Download the v1.3.0 checksum](https://github.com/igortice/spacelabels/releases/download/v1.3.0/SpaceLabels-1.3.0.dmg.sha256)
+  `d1c211b7787dab990f5b12cb081f18123ea1f19aeb3b81ae7a548f58e662c25c`
+- [Download the v1.4.0 DMG](https://github.com/igortice/spacelabels/releases/download/v1.4.0/SpaceLabels-1.4.0.dmg)
+- [Download the v1.4.0 checksum](https://github.com/igortice/spacelabels/releases/download/v1.4.0/SpaceLabels-1.4.0.dmg.sha256)
 
 To verify a downloaded DMG locally:
 
 ```bash
-shasum -a 256 SpaceLabels-1.3.0.dmg
+shasum -a 256 SpaceLabels-1.4.0.dmg
 ```
 
 Compare the output with the digest above or with the `.sha256` file from the
 same Release. When a newer version is published, use that Release's
 version-specific checksum.
 
-### v1.3.0 highlights
+### Product highlights
 
 - App History for the current Space.
 - Reopen one app or all apps from a Space's History.
 - Browse the History of another Space or all Spaces.
 - Remove History entries with local logical deletion.
 - Privacy controls and permanent History deletion.
+- Optional Space name in the menu bar and monitor context.
+- Manage Desktops grouped by monitor.
+- Configurable global shortcuts for showing the current Space and renaming it.
 
 ## Privacy
 

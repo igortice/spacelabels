@@ -27,6 +27,16 @@ test("README is the GitHub entry point for the public product", () => {
   assert.match(readme, /HUD/);
   assert.match(readme, /App History/);
   assert.match(readme, /Rename/);
+  assert.match(readme, /monitor context/);
+  assert.match(readme, /Manage Desktops/);
+  assert.match(readme, /global shortcuts/);
+  assert.match(readme, /optional Space name in the menu bar/);
+  assert.match(
+    readme,
+    /Starting with SpaceLabels 1\.4\.0, public releases use a branded\s+DMG\./,
+  );
+  assert.match(readme, /Downloads\s+remain locked to the latest verified public\s+version\./);
+  assert.doesNotMatch(readme, /release candidate is prepared/);
   assert.match(readme, /## Requirements/);
   assert.match(readme, /## First use/);
   assert.match(readme, /## Download and install/);
@@ -46,8 +56,8 @@ test("README documents the verified installation and release path", () => {
     "Open SpaceLabels from Finder",
     "Gatekeeper",
     "SHA-256",
-    "v1.3.0",
-    "5d68bcf6d08165eba79a8fd8323585b62e0a8ecee1c567aaa5722020e44fc844",
+    "v1.4.0",
+    "d1c211b7787dab990f5b12cb081f18123ea1f19aeb3b81ae7a548f58e662c25c",
   ]) {
     assert.match(readme, new RegExp(phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   }
@@ -72,6 +82,9 @@ test("README describes the real screens without embedding images", () => {
     "SpaceLabels HUD",
     "App History",
     "Rename Space",
+    "Manage Desktops",
+    "monitor context",
+    "global shortcuts",
     "Preferences",
   ]) {
     assert.match(readme, new RegExp(phrase, "i"));
