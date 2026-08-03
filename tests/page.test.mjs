@@ -82,6 +82,10 @@ test("both routes expose reciprocal language selectors and metadata", async () =
     assert.match(html, /name="viewport"/);
     assert.match(html, /name="description"/);
     assert.match(html, /property="og:image"/);
+    assert.match(
+      html,
+      /https:\/\/igortice\.github\.io\/spacelabels\/assets\/spacelabels\.webp\?v=1\.4\.1/,
+    );
     assert.match(html, /hreflang="x-default"/);
     assert.match(html, /<nav class="site-nav" aria-label=/);
     assert.match(html, /<noscript>/);
@@ -105,6 +109,12 @@ test("both routes share the same versioned design-system stylesheet", () => {
 test("changed landing assets carry the current cache key", () => {
   for (const html of [englishHtml, portugueseHtml]) {
     assert.match(html, /styles\.css\?v=20260802-1/);
+    assert.equal(
+      (html.match(/spacelabels\.webp\?v=1\.4\.1/g) ?? []).length,
+      4,
+      "Open Graph and every visible logo must use the 1.4.1 cache key",
+    );
+    assert.match(html, /favicon\.png\?v=1\.4\.1/);
     for (const image of ["menu", "space-management", "preferences"]) {
       assert.match(html, new RegExp(`${image}\\.webp\\?v=20260801-1`));
     }
