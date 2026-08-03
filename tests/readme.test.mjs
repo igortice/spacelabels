@@ -56,8 +56,8 @@ test("README documents the verified installation and release path", () => {
     "Open SpaceLabels from Finder",
     "Gatekeeper",
     "SHA-256",
-    "v1.4.0",
-    "d1c211b7787dab990f5b12cb081f18123ea1f19aeb3b81ae7a548f58e662c25c",
+    "v1.4.1",
+    "fa46824e020c590f1d7f5808f42cae9077376fc546d40ef08e5cf63291c606d0",
   ]) {
     assert.match(readme, new RegExp(phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   }

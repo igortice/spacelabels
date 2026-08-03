@@ -81,18 +81,18 @@ No installer account or additional service is required.
 
 The [latest public Release](https://github.com/igortice/spacelabels/releases/latest)
 is the source of truth for the current version, DMG and checksum. The current
-reference release is **v1.4.0**:
+reference release is **v1.4.1**:
 
-- DMG: `SpaceLabels-1.4.0.dmg` (5.2 MB)
+- DMG: `SpaceLabels-1.4.1.dmg` (5.1 MB)
 - SHA-256:
-  `d1c211b7787dab990f5b12cb081f18123ea1f19aeb3b81ae7a548f58e662c25c`
-- [Download the v1.4.0 DMG](https://github.com/igortice/spacelabels/releases/download/v1.4.0/SpaceLabels-1.4.0.dmg)
-- [Download the v1.4.0 checksum](https://github.com/igortice/spacelabels/releases/download/v1.4.0/SpaceLabels-1.4.0.dmg.sha256)
+  `fa46824e020c590f1d7f5808f42cae9077376fc546d40ef08e5cf63291c606d0`
+- [Download the v1.4.1 DMG](https://github.com/igortice/spacelabels/releases/download/v1.4.1/SpaceLabels-1.4.1.dmg)
+- [Download the v1.4.1 checksum](https://github.com/igortice/spacelabels/releases/download/v1.4.1/SpaceLabels-1.4.1.dmg.sha256)
 
 To verify a downloaded DMG locally:
 
 ```bash
-shasum -a 256 SpaceLabels-1.4.0.dmg
+shasum -a 256 SpaceLabels-1.4.1.dmg
 ```
 
 Compare the output with the digest above or with the `.sha256` file from the

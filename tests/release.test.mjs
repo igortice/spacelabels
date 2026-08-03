@@ -8,31 +8,33 @@ import {
 } from "../assets/release.js";
 
 const validRelease = {
-  tag_name: "v1.4.0",
-  name: "SpaceLabels 1.4.0",
+  tag_name: "v1.4.1",
+  name: "SpaceLabels 1.4.1",
   draft: false,
   prerelease: false,
-  published_at: "2026-08-02T02:20:56Z",
+  published_at: "2026-08-03T21:29:16Z",
   body: [
     "## What's Changed",
-    "* release: prepare SpaceLabels 1.4.0",
+    "* Refreshed the SpaceLabels app and menu bar icons.",
+    "* Improved the About experience in English and Brazilian Portuguese.",
+    "* Added stronger visual asset validation for consistent builds.",
   ].join("\n"),
   assets: [
     {
-      name: "SpaceLabels-1.4.0.dmg",
+      name: "SpaceLabels-1.4.1.dmg",
       browser_download_url:
-        "https://github.com/igortice/spacelabels/releases/download/v1.4.0/SpaceLabels-1.4.0.dmg",
-      size: 5_190_181,
+        "https://github.com/igortice/spacelabels/releases/download/v1.4.1/SpaceLabels-1.4.1.dmg",
+      size: 5_064_594,
       digest:
-        "sha256:d1c211b7787dab990f5b12cb081f18123ea1f19aeb3b81ae7a548f58e662c25c",
+        "sha256:fa46824e020c590f1d7f5808f42cae9077376fc546d40ef08e5cf63291c606d0",
     },
     {
-      name: "SpaceLabels-1.4.0.dmg.sha256",
+      name: "SpaceLabels-1.4.1.dmg.sha256",
       browser_download_url:
-        "https://github.com/igortice/spacelabels/releases/download/v1.4.0/SpaceLabels-1.4.0.dmg.sha256",
+        "https://github.com/igortice/spacelabels/releases/download/v1.4.1/SpaceLabels-1.4.1.dmg.sha256",
       size: 88,
       digest:
-        "sha256:875e42c9e33c82269507e4d34993eb12d352d5e7bbed9a8f55a97c6067d87b21",
+        "sha256:ca8c8b60ed41872ac789df053a4dae10658c3f0a68d0761789ba52f90208857b",
     },
   ],
 };
@@ -41,18 +43,22 @@ test("normaliza a Release pública validada para apresentação", () => {
   const release = normalizePublicRelease(validRelease);
 
   assert.deepEqual(release, {
-    version: "1.4.0",
-    tag: "v1.4.0",
-    publishedAt: "2026-08-02T02:20:56Z",
-    dmgName: "SpaceLabels-1.4.0.dmg",
+    version: "1.4.1",
+    tag: "v1.4.1",
+    publishedAt: "2026-08-03T21:29:16Z",
+    dmgName: "SpaceLabels-1.4.1.dmg",
     dmgUrl:
-      "https://github.com/igortice/spacelabels/releases/download/v1.4.0/SpaceLabels-1.4.0.dmg",
-    dmgSize: 5_190_181,
+      "https://github.com/igortice/spacelabels/releases/download/v1.4.1/SpaceLabels-1.4.1.dmg",
+    dmgSize: 5_064_594,
     checksum:
-      "d1c211b7787dab990f5b12cb081f18123ea1f19aeb3b81ae7a548f58e662c25c",
+      "fa46824e020c590f1d7f5808f42cae9077376fc546d40ef08e5cf63291c606d0",
     checksumUrl:
-      "https://github.com/igortice/spacelabels/releases/download/v1.4.0/SpaceLabels-1.4.0.dmg.sha256",
-    notes: ["release: prepare SpaceLabels 1.4.0"],
+      "https://github.com/igortice/spacelabels/releases/download/v1.4.1/SpaceLabels-1.4.1.dmg.sha256",
+    notes: [
+      "Refreshed the SpaceLabels app and menu bar icons.",
+      "Improved the About experience in English and Brazilian Portuguese.",
+      "Added stronger visual asset validation for consistent builds.",
+    ],
   });
 });
 
@@ -97,7 +103,7 @@ test("recusa artefatos ausentes, divergentes ou fora do GitHub público", () => 
           ? {
               ...asset,
               browser_download_url:
-                "https://example.com/SpaceLabels-1.4.0.dmg",
+                "https://example.com/SpaceLabels-1.4.1.dmg",
             }
           : asset
       ),
@@ -141,7 +147,7 @@ test("usa o manifesto local validado quando a API pública está indisponível",
     ],
   });
 
-  assert.equal(release.version, "1.4.0");
+  assert.equal(release.version, "1.4.1");
   assert.deepEqual(requested, [
     "https://api.github.com/latest",
     "assets/release-fallback.json",

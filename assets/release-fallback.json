@@ -1,22 +1,22 @@
 {
-  "tag_name": "v1.4.0",
-  "name": "SpaceLabels 1.4.0",
+  "tag_name": "v1.4.1",
+  "name": "SpaceLabels 1.4.1",
   "draft": false,
   "prerelease": false,
-  "published_at": "2026-08-02T02:20:56Z",
-  "body": "## What's Changed\n* release: prepare SpaceLabels 1.4.0",
+  "published_at": "2026-08-03T21:29:16Z",
+  "body": "## What's Changed\n* Refreshed the SpaceLabels app and menu bar icons.\n* Improved the About experience in English and Brazilian Portuguese.\n* Added stronger visual asset validation for consistent builds.",
   "assets": [
     {
-      "name": "SpaceLabels-1.4.0.dmg",
-      "browser_download_url": "https://github.com/igortice/spacelabels/releases/download/v1.4.0/SpaceLabels-1.4.0.dmg",
-      "size": 5190181,
-      "digest": "sha256:d1c211b7787dab990f5b12cb081f18123ea1f19aeb3b81ae7a548f58e662c25c"
+      "name": "SpaceLabels-1.4.1.dmg",
+      "browser_download_url": "https://github.com/igortice/spacelabels/releases/download/v1.4.1/SpaceLabels-1.4.1.dmg",
+      "size": 5064594,
+      "digest": "sha256:fa46824e020c590f1d7f5808f42cae9077376fc546d40ef08e5cf63291c606d0"
     },
     {
-      "name": "SpaceLabels-1.4.0.dmg.sha256",
-      "browser_download_url": "https://github.com/igortice/spacelabels/releases/download/v1.4.0/SpaceLabels-1.4.0.dmg.sha256",
+      "name": "SpaceLabels-1.4.1.dmg.sha256",
+      "browser_download_url": "https://github.com/igortice/spacelabels/releases/download/v1.4.1/SpaceLabels-1.4.1.dmg.sha256",
       "size": 88,
-      "digest": "sha256:875e42c9e33c82269507e4d34993eb12d352d5e7bbed9a8f55a97c6067d87b21"
+      "digest": "sha256:ca8c8b60ed41872ac789df053a4dae10658c3f0a68d0761789ba52f90208857b"
     }
   ]
 }
